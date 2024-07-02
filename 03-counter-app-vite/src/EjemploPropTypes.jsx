@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 export const EjemploPropTypes = ({ title, subtitle, suma}) => {
   return (
     <>
-      <h1>{title}</h1>
+      <h1 data-testid='test-title'>{title}</h1>
       <p>{subtitle}</p>
       <p>{suma}</p>
     </>
@@ -23,7 +23,7 @@ EjemploPropTypes.propTypes = {
 
 // Valores por defecto
 EjemploPropTypes.defaultProps = {
-    title: 'No hay ningún título',
+    // title: 'No hay ningún título',
     subtitle: 'No hay subtitulo',
     suma: 2,
 

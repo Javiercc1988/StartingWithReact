@@ -19,7 +19,7 @@ export const CounterAppMejorado = ({ valorInicial = 0 }) => {
 
       <button onClick={incrementarContador}> +1 </button>
       <button onClick={decrementarContador}> -1 </button>
-      <button onClick={resetContador}>Reset</button>
+      <button aria-label="btn-reset" onClick={resetContador}>Reset</button>
     </>
   );
 };

@@ -24,7 +24,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       suma={15 + 15}
     /> */}
 
-    {/* <EjemploPropTypes/> */}
+    {/* <EjemploPropTypes title="Hola, este es mi título"/> */}
 
     {/* <CounterApp value={135} /> */}
     <CounterAppMejorado valorInicial={10}/>
