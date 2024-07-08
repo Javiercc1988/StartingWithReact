@@ -16,12 +16,12 @@ export const AddCategory = ({ onAddNewCategory }) => {
     const cleanValue = inputValue.trim();
     if (cleanValue.length <= 1) return;
 
+    // Reseteamos el input
+    setinputValue("");
     // Usamos la función enviada por props del componente para emitir al componente padre el valor
     // De esta forma se encarga el componente padre de trabajar con el dato
     onAddNewCategory(cleanValue);
 
-    // Reseteamos el input
-    setinputValue("");
   };
 
   return (
