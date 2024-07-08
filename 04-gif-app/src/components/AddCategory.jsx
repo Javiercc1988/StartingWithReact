@@ -29,7 +29,7 @@ export const AddCategory = ({ onAddNewCategory }) => {
     <form onSubmit={onSubmit}>
       <input
         type="text"
-        placeholder="Introduce una categoría"
+        placeholder="Busca una categoría..."
         value={inputValue}
         onChange={onInputChange}
         // onChange={(inputEvent) => onInputChange(inputEvent)}
