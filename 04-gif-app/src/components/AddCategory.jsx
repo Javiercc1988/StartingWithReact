@@ -1,6 +1,7 @@
 //Creacion de componente rapido rafc
 
 import React, { useState } from "react";
+import PropTypes from 'prop-types'
 
 export const AddCategory = ({ onAddNewCategory }) => {
   const [inputValue, setinputValue] = useState("");
@@ -26,7 +27,7 @@ export const AddCategory = ({ onAddNewCategory }) => {
 
   return (
     // <form onSubmit={(event) => onSubmit(event)}>
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} aria-label="form">
       <input
         type="text"
         placeholder="Busca una categoría..."
@@ -37,3 +38,8 @@ export const AddCategory = ({ onAddNewCategory }) => {
     </form>
   );
 };
+
+
+AddCategory.propTypes = {
+  onAddNewCategory: PropTypes.func.isRequired
+}
