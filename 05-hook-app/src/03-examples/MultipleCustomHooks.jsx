@@ -9,14 +9,22 @@ export const MultipleCustomHooks = () => {
     `https://pokeapi.co/api/v2/pokemon/${counter}`
   );
 
-
   return (
     <>
       <h1>Información de Pokémon</h1>
       <hr />
       <pre>Pokémon info</pre>
 
-      {isLoading ? <LoadingMessage /> : <PokemonCard id={data.id} name={data.name} sprites={data.sprites}/>}
+      {isLoading ? (
+        <LoadingMessage />
+      ) : (
+        <PokemonCard id={data.id} name={data.name} sprites={[
+          data.sprites.back_default,
+          data.sprites.back_shiny,
+          data.sprites.front_default,
+          data.sprites.front_shiny
+        ]} />
+      )}
 
       <h2>{data?.name}</h2>
 
