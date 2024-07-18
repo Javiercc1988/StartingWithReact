@@ -1,0 +1,43 @@
+import { LoadingMessage } from "../03-examples/LoadingMessage";
+import { PokemonCard } from "../03-examples/PokemonCard";
+import { useCounter, useFetch } from "../hooks";
+
+
+export const Layout = () => {
+  const { counter, increment, decrement, reset } = useCounter(1, 100, 1);
+
+  const { data, hasError, isLoading } = useFetch(
+    `https://pokeapi.co/api/v2/pokemon/${counter}`
+  );
+
+  return (
+    <>
+      <h1>Información de Pokémon</h1>
+      <hr />
+      <pre>Pokémon info</pre>
+
+      {isLoading ? (
+        <LoadingMessage />
+      ) : (
+        <PokemonCard id={data.id} name={data.name} sprites={[
+          data.sprites.back_default,
+          data.sprites.back_shiny,
+          data.sprites.front_default,
+          data.sprites.front_shiny
+        ]} />
+      )}
+
+      <h2>{data?.name}</h2>
+
+      <button
+        className="btn btn-primary mt-3"
+        onClick={() => (counter >= 1 ? decrement() : null)}
+      >
+        Anterior
+      </button>
+      <button className="btn btn-primary mt-3" onClick={() => increment()}>
+        Siguiente
+      </button>
+    </>
+  );
+};

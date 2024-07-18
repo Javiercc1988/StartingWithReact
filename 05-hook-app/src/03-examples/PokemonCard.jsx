@@ -1,4 +1,15 @@
+import { useLayoutEffect, useRef } from "react";
+
 export const PokemonCard = ({ id, name, sprites = [] }) => {
+
+  const imgRef = useRef();
+
+  useLayoutEffect(() => {
+
+    console.log(imgRef.current.get)
+
+  }, [id])
+
   return (
     <>
       <section>
@@ -6,7 +17,7 @@ export const PokemonCard = ({ id, name, sprites = [] }) => {
           #{id} - {name}
         </h2>
       </section>
-      <div>
+      <div style={{border: '1px solid red'}}>
         {sprites.map((sprite) => (
           <img key={sprite} src={sprite} alt={name} />
         ))}

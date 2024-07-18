@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 // Objeto local de caché
-
 const localcache = {};
 
 export const useFetch = (url) => {
