@@ -6,8 +6,6 @@ export const PokemonCard = ({ id, name, sprites = [] }) => {
 
   useLayoutEffect(() => {
 
-    console.log(imgRef.current.get)
-
   }, [id])
 
   return (
