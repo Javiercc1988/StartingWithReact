@@ -31,6 +31,3 @@ const addTodoAction = {
 
 // Llamamos al reducer con el estado inicial y la acción de agregar un nuevo todo.
 let todos = todoReducer(initialState, addTodoAction);
-
-// Mostramos el nuevo estado
-console.log(todos);

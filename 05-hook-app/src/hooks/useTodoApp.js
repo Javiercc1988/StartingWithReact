@@ -15,12 +15,10 @@ export const useTodoApp = () => {
   }, [todos]);
 
   const handleNewTodo = (newTodo) => {
-    const action = {
+    dispatch({
       type: "[TODO] Add TODO",
       payload: newTodo,
-    };
-
-    dispatch(action);
+    });
   };
 
   const handleDeleteTodo = (todo) => {
@@ -45,5 +43,7 @@ export const useTodoApp = () => {
     handleDeleteTodo,
     handleNewTodo,
     handleToggleTodo,
+    todosCount: todos.length,
+    pendingTodosCount: todos.filter((todo) => !todo.done).length,
   };
 };
