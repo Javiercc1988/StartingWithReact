@@ -3,10 +3,11 @@ import { HomePage } from "./HomePage";
 import { AboutPage } from "./AboutPage";
 import { Login } from "./Login";
 import { Navbar } from "./Navbar";
+import { UserProvider } from "./context/UserProvider";
 
 export const MainApp = () => {
   return (
-    <>
+    <UserProvider>
       <h1>Main App</h1>
       <Navbar />
 
@@ -20,6 +21,6 @@ export const MainApp = () => {
         {/* Redirección a ruta desconocida */}
         <Route path="/*" element={<Navigate to="/login" />} />
       </Routes>
-    </>
+    </UserProvider>
   );
 };
