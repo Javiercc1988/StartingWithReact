@@ -14,7 +14,7 @@ export const HeroCard = ({
     <div className="col">
       <div className="card">
         <div className="row no-gutters">
-          <div className="col-4">
+          <div className="col-4 animate__animated animate__fadeIn">
             <img className="card-img" src={heroImg} alt={superhero} />
           </div>
 
